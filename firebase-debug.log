@@ -1,0 +1,45 @@
+[debug] [2024-12-17T09:42:21.669Z] ----------------------------------------------------------------------
+[debug] [2024-12-17T09:42:21.671Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Veera\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-12-17T09:42:21.672Z] CLI Version:   13.29.1
+[debug] [2024-12-17T09:42:21.672Z] Platform:      win32
+[debug] [2024-12-17T09:42:21.672Z] Node Version:  v20.9.0
+[debug] [2024-12-17T09:42:21.672Z] Time:          Tue Dec 17 2024 15:12:21 GMT+0530 (India Standard Time)
+[debug] [2024-12-17T09:42:21.672Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-17T09:42:21.677Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-17T09:42:21.678Z] > authorizing via signed-in user (itsveer00@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Projects\backend-deeplink-new\backend-deeplink
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2024-12-17T09:42:45.031Z] Checked if tokens are valid: true, expires at: 1734432016767
+[debug] [2024-12-17T09:42:45.031Z] Checked if tokens are valid: true, expires at: 1734432016767
+[debug] [2024-12-17T09:42:45.032Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-12-17T09:42:45.032Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"deeplinking-testing","name":"deeplinking-testing"}
+[debug] [2024-12-17T09:42:49.774Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 409
+[debug] [2024-12-17T09:42:49.774Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2024-12-17T09:42:50.852Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 409, Requested entity already exists
+    at responseToError (C:\Users\Veera\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\Veera\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project because there is already a project with ID deeplinking-testing. Please try again with a unique project ID.
