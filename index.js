@@ -16,7 +16,8 @@ app.get("/", (req, res) => {
   if (userAgent.includes("Android")) {
     res.redirect("intent://chipin#Intent;scheme=chipinapp;package=com.chipin;end");
   } else {
-    res.sendFile(path.join(__dirname, "not-installed.html"));
+    // res.sendFile(path.join(__dirname, "not-installed.html"));
+    res.redirect("https://chipin.com/home");
   }
 });
 
