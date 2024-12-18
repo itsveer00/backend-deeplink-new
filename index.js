@@ -23,7 +23,6 @@ app.get("/:screen/:referralCode", (req, res) => {
     );
   } else {
     // Serve a web fallback if the app is not installed
-    // res.redirect(`https://play.google.com/store/`);
     // res.redirect(`https://chipin.com/${screen}?referral=${referralCode}`);
     res.sendFile(path.join(__dirname, "not-installed.html"));
   }
@@ -35,7 +34,8 @@ app.get("/", (req, res) => {
   const userAgent = req.headers["user-agent"] || "";
 
   if (userAgent.includes("Android")) {
-    res.redirect("intent://chipin#Intent;scheme=chipinapp;package=com.chipin;end");
+    // res.redirect("intent://chipin#Intent;scheme=chipinapp;package=com.chipin;end");
+    res.sendFile(path.join(__dirname, "not-installed.html"));
   } else {
     res.sendFile(path.join(__dirname, "not-installed.html"));
     // res.redirect("https://chipin.com/home");
