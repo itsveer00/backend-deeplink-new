@@ -38,15 +38,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "not-installed.html"));
   } else {
     res.sendFile(path.join(__dirname, "not-installed.html"));
-    // res.redirect("https://chipin.com/home");
-    // Redirect to a web fallback for non-Android devices
     // res.redirect(`https://chipin.com/${screen}?referral=${referralCode}`);
   }
-});
-
-// Serve the fallback page if app is not installed
-app.get("/not-installed", (req, res) => {
-  res.sendFile(path.join(__dirname, "not-installed.html"));
 });
 
 app.listen(PORT, () => {
