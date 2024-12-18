@@ -9,7 +9,7 @@ app.get("/.well-known/assetlinks.json", (req, res) => {
   res.sendFile(path.join(__dirname, "assetlinks.json"));
 });
 
-// Serve specific screen path and referral code
+// Open specific screen path and referral code
 app.get("/:screen/:referralCode", (req, res) => {
   const { screen, referralCode } = req.params;
 
@@ -27,7 +27,7 @@ app.get("/:screen/:referralCode", (req, res) => {
   }
 });
 
-// Serve the web page if app is not installed
+// Open the web page if app is not installed
 app.get("/", (req, res) => {
   // Check for the `user-agent` header for Android deep linking
   const userAgent = req.headers["user-agent"] || "";
@@ -35,8 +35,10 @@ app.get("/", (req, res) => {
   if (userAgent.includes("Android")) {
     res.redirect("intent://chipin#Intent;scheme=chipinapp;package=com.chipin;end");
   } else {
-    // res.sendFile(path.join(__dirname, "not-installed.html"));
-    res.redirect("https://chipin.com/home");
+    res.sendFile(path.join(__dirname, "not-installed.html"));
+    // res.redirect("https://chipin.com/home");
+    // Redirect to a web fallback for non-Android devices
+    // res.redirect(`https://chipin.com/${screen}?referral=${referralCode}`);
   }
 });
 
