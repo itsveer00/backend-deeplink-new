@@ -23,7 +23,8 @@ app.get("/:screen/:referralCode", (req, res) => {
     );
   } else {
     // Serve a web fallback if the app is not installed
-    res.redirect(`https://chipin.com/${screen}?referral=${referralCode}`);
+    // res.redirect(`https://chipin.com/${screen}?referral=${referralCode}`);
+    res.sendFile(path.join(__dirname, "not-installed.html"));
   }
 });
 
